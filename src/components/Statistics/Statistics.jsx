@@ -3,10 +3,10 @@ import { Title } from './Title/Title';
 import { StatList } from './Stat_list/Stat_list';
 import { StatisticsContainer, List } from './Statistics.styled';
 
-export const Statistics = ({ data }) => {
+export const Statistics = ({ data, item }) => {
   return (
     <StatisticsContainer>
-      <Title text="Upload stats" />
+      {item && <Title text={item} />}
       <List>
         {data.map(({ id, label, percentage }) => {
           return <StatList key={id} label={label} percentage={percentage} />;
